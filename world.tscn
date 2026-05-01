@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://d1onvjeoaed1l"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
+size = Vector2(100, 100)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_f3sb7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fj7yv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlwt5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_aqk2v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_036b0"]
+
+[sub_resource type="Environment" id="Environment_dwbse"]
+background_mode = 2
+
+[node name="World" type="Node3D" unique_id=532256173]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=76755741]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1062204511]
+mesh = SubResource("PlaneMesh_gv5m4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=2038773154]
+shape = SubResource("WorldBoundaryShape3D_f3sb7")
+
+[node name="Building1" type="StaticBody3D" parent="." unique_id=384367993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Building1" unique_id=653367175]
+mesh = SubResource("BoxMesh_fj7yv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building1" unique_id=1145008254]
+shape = SubResource("BoxShape3D_tlwt5")
+
+[node name="Building2" type="StaticBody3D" parent="." unique_id=1311032458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.222029, 0.5, 10.372796)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Building2" unique_id=417071511]
+mesh = SubResource("BoxMesh_fj7yv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building2" unique_id=1749917012]
+shape = SubResource("BoxShape3D_tlwt5")
+
+[node name="Building3" type="StaticBody3D" parent="." unique_id=222210249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0098133, 0.5, 7.100291)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Building3" unique_id=2070186876]
+mesh = SubResource("BoxMesh_fj7yv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building3" unique_id=877230512]
+shape = SubResource("BoxShape3D_tlwt5")
+
+[node name="Unit" type="CharacterBody3D" parent="." unique_id=727886205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Unit" unique_id=267572816]
+mesh = SubResource("CapsuleMesh_aqk2v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Unit" unique_id=1431662546]
+shape = SubResource("CapsuleShape3D_036b0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=704820978]
+transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=736995744]
+environment = SubResource("Environment_dwbse")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1070646036]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 15, 15)
