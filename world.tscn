@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://d1onvjeoaed1l"]
 
 [ext_resource type="Script" uid="uid://bgbnhapysscsp" path="res://camera_rig.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://cgmd7jo2w78yi" path="res://world.gd" id="1_tlwt5"]
+[ext_resource type="Script" uid="uid://l3dphr8qj161" path="res://unit.gd" id="2_aqk2v"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
 size = Vector2(100, 100)
@@ -19,6 +21,7 @@ size = Vector2(100, 100)
 background_mode = 2
 
 [node name="World" type="Node3D" unique_id=532256173]
+script = ExtResource("1_tlwt5")
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=76755741]
 
@@ -57,6 +60,7 @@ shape = SubResource("BoxShape3D_tlwt5")
 
 [node name="Unit" type="CharacterBody3D" parent="." unique_id=727886205]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_aqk2v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Unit" unique_id=267572816]
 mesh = SubResource("CapsuleMesh_aqk2v")
